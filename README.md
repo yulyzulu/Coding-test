@@ -4,6 +4,7 @@ Este es un sitio web que tiene la capacidad de saludar, decir el nombre del usua
 ## Características
 ### Navegabilidad
 El sitio web tiene navegabilidad y puedes desplazarte por la página de inicio y por la página que ejecuta el programa.
+
 ![](frontend/src/assets/static/home.png)
 
 ### Acciones
@@ -11,14 +12,17 @@ Al ingresar a la pestaña "¡Ven! Te voy a saludar" puedes encontrar el programa
 
 #### Saludar
 Al ingresar el nombre, elegir el idioma inglés y la acción de saludar, la página saluda:
+
 ![](frontend/src/assets/static/greeting.png)
 
 #### Nombre
 Al ingresar el nombre, elegir el idioma español y la acción de nombre, la página dice tu nombre:
+
 ![](frontend/src/assets/static/name.png)
 
 #### Despedir
 Al ingresar el nombre, elegir el idioma inglés y la acción de despedir, la página se despide:
+
 ![](frontend/src/assets/static/farewell.png)
 
 
@@ -28,7 +32,7 @@ En el repositorio puedes encontrar dos directorios:
 **Frontend**: Encargado de la parte visual del sitio web y que además trae contenido del backend para ser renderizado.
 
 ## Requerimientos
-Para correr el programa en una máquina local, debes tener instalado **node**, **npm** y **mongodb** en tu computador.
+Para correr el programa en una máquina local, debes tener instalado **node**, **npm** y **mongoDB** en tu computador.
 
 ## Instrucciones
 ### Clonar el repositorio
@@ -94,9 +98,9 @@ Este código fue desarrollado con un stack MERN utilizando como lenguaje de prog
 
 ### Tecnologías Front-end
 #### ReactJs
-En la parte del frontend se utilizó la librería de ReactJs. React permite crear interfaces de usuario interactivas de forma sencilla.Es rápido, escalable, flexible, potente y tiene una sólida comunidad de desarrolladores que está creciendo rápidamente.
+En la parte del frontend se utilizó la librería de ReactJs. React permite crear interfaces de usuario interactivas de forma sencilla. Es rápido, escalable, flexible, potente y tiene una sólida comunidad de desarrolladores que está creciendo rápidamente.
 #### Bootstrap 5
-Bootstrap es un framework frontend que permite establecer estilos, de una forma sencilla.
+Bootstrap es un framework frontend que permite establecer estilos de una forma sencilla.
 
 ### Tecnologías Backend
 #### NodeJs
