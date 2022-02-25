@@ -1,4 +1,5 @@
 import React from 'react';
+import './ActionButtons.css';
 
 const ActionButtons = ({setGreeting, setSayName, setFarewell}) => {
   return (

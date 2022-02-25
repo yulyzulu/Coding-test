@@ -1,0 +1,12 @@
+/* Action Buttons Styles */
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: #6c757d;
+}
