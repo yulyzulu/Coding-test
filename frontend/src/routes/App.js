@@ -11,7 +11,7 @@ function App() {
       <Layout>
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route exact path='/form' element={<Form />} />
+          <Route exact path='/saludo' element={<Form />} />
         </Routes>
       </Layout>
     </BrowserRouter>

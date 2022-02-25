@@ -11,7 +11,7 @@ const Navbar = () => {
         </Link>
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
-            <Link className="nav-link text-white" to="/form">¡Ven! Te quiero saludar</Link>
+            <Link className="nav-link text-white" to="/saludo">¡Ven! Te quiero saludar</Link>
           </li>
         </ul>
       </div>

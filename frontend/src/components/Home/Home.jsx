@@ -10,7 +10,7 @@ const Home = () => {
       </p>
       <p>Este sitio web ha sido diseñado para saludar, despedirse o nombrar a una persona de acuerdo al idioma que elija.</p>
       <p>
-        Puedes navegar a través de la página y probar qué es lo que realmente hace el programa.
+        Puedes navegar a través del sitio web y probar qué es lo que realmente hace el programa.
       </p>
       <img src={hello} alt="saludo" className='hello_img' />
       <p>
