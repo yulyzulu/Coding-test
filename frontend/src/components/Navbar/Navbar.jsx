@@ -10,7 +10,7 @@ const Navbar = () => {
         </Link>
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
-            <Link className="nav-link" to="/form">Ven te voy a saludar</Link>
+            <Link className="nav-link" to="/form">¡Ven! Te quiero saludar</Link>
           </li>
         </ul>
       </div>
