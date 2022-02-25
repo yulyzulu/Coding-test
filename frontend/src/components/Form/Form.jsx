@@ -1,13 +1,14 @@
 import React, {useState, useEffect } from 'react';
 import Axios from 'axios';
-
 import './Form.css';
+import ActionButtons from '../ActionButtons/ActionButtons';
 
 const Form = () => {
 
   const [name, setName] = useState('');
+  const [theName, setTheName] = useState('');
   const [action, setAction] = useState('');
-  const [language, setLanguage] = useState('');
+  const [idLanguage, setIdLanguage] = useState('');
   const [languages, setLanguages] = useState([]);
   const languageUrl = 'http://localhost:3001/api/languages';
 
@@ -19,51 +20,57 @@ const Form = () => {
     try {
       const result = await Axios.get(languageUrl);
       setLanguages(result.data);
-      console.log(result.data);
+     }
+    catch(error) {
+      console.log('Error al consultar la api');
+    }
+  };
+
+  const getName = (e) => {
+    setName(e.target.value);
+  };
+
+  const setGreeting = async (e) => {
+    e.preventDefault();
+    setTheName(name);
+    try {
+      const result = await Axios.get(languageUrl + '/' + idLanguage);
+      setAction(result.data.greeting);
     }
     catch(error) {
       console.log('Error al consultar la api');
     }
   };
 
-  const setGreeting = async (e) => {
-    e.preventDefault();
-    try {
-      const result = await Axios.get(languageUrl + '/' + language);
-      setAction(result.data.greeting);
-    }
-    catch(error) {
-      console.log('Error al consultar la api');
-    }
-  }
-
   const setFarewell = async (e) => {
     e.preventDefault();
+    setTheName(name);
     try {
-      const result = await Axios.get(languageUrl + '/' + language);
+      const result = await Axios.get(languageUrl + '/' + idLanguage);
       setAction(result.data.farewell);
     }
     catch(error) {
       console.log('Error al consultar la api');
     }
-  }
+  };
 
   const setSayName = async (e) => {
     e.preventDefault();
+    setTheName(name);
     try {
-      const result = await Axios.get(languageUrl + '/' + language);
+      const result = await Axios.get(languageUrl + '/' + idLanguage);
       setAction(result.data.name);
     }
     catch(error) {
       console.log('Error al consultar la api');
     }
-  }
+  };
 
   return (
     <section className='container form' >
       <h1 className='my-3'>Saludos</h1>
       <form >
-        <p className='m-4'>Ingresa tu nombre, selecciona el idioma y da click a la acción que quieres que se ejecute.</p>
+        <p className='m-4'>Ingresa tu nombre, selecciona el idioma y da clic a la acción que quieres que se ejecute.</p>
         <div className='row justify-content-center'>
           <label className='col-1' htmlFor="name">Nombre:</label>
           <div className='col-6'>
@@ -73,7 +80,7 @@ const Form = () => {
                 id='name'
                 name="name"
                 value={name}
-                onChange={e => setName(e.target.value)}
+                onChange={getName}
                 required
                 />
           </div>
@@ -88,7 +95,7 @@ const Form = () => {
                     className='form-check-input me-2'
                     name="language"
                     value={lang.language}
-                    onChange={() => setLanguage(lang._id)}
+                    onChange={() => setIdLanguage(lang._id)}
                   />
                   {lang.language}
                 </label>
@@ -96,32 +103,14 @@ const Form = () => {
           }
 
         </div>
-        <div className='buttons'>
-          <button
-            type='submit'
-            className='btn btn-secondary rounded-pill '
-            onClick={setGreeting}
-          >
-            Saludar
-          </button>
-          <button
-            type='submit'
-            className='btn btn-secondary rounded-pill'
-            onClick={setSayName}
-          >
-            Nombre
-          </button>
-          <button
-            type='submit'
-            className='btn btn-secondary rounded-pill'
-            onClick={setFarewell}
-          >
-            Despedir
-          </button>
-        </div>
+        <ActionButtons
+          setGreeting={setGreeting}
+          setFarewell={setFarewell}
+          setSayName={setSayName}
+        />
       </form>
       {
-        action && name? <p className='action mt-4'> ¡{action} {name}!</p> : ''
+        action && theName? <p className='action mt-4'> ¡{action} {theName}!</p> : ''
       }
     </section>
   );
